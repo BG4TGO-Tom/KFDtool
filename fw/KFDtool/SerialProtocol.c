@@ -40,7 +40,7 @@ void spDisconnect(void)
     USB_disable(); // Disable USB module, disable PLL
 }
 
-uint16_t spRxData(uint8_t *rxBuffer)
+uint16_t spRxData(uint8_t *rxBuffer, uint16_t bufferSize)
 {
     uint8_t inData[1];
     uint16_t inDataCount;
@@ -186,3 +186,4 @@ void spTxDataWait(const uint8_t *inData, uint16_t inLength)
 
     cdcSendDataWaitTilDone(outData, outLength, CDC0_INTFNUM, 1000);
 }
+
