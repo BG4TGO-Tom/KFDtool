@@ -56,7 +56,7 @@ uint16_t spRxData(uint8_t *rxBuffer, uint16_t bufferSize)
         }
 
         // reset if buffer overrun
-        if (rxIndex == sizeof(rxBuffer))
+        if (rxIndex >= bufferSize)
         {
             rxIndex = 0;
             rxStartFlag = 0;
@@ -186,4 +186,5 @@ void spTxDataWait(const uint8_t *inData, uint16_t inLength)
 
     cdcSendDataWaitTilDone(outData, outLength, CDC0_INTFNUM, 1000);
 }
+
 
