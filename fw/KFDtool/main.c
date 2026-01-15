@@ -84,7 +84,7 @@ void main(void)
 
     while (1)
     {
-        cmdCount = spRxData(cmdData);
+        cmdCount = spRxData(cmdData, sizeof(cmdData));
 
         if (cmdCount > 0)
         {
